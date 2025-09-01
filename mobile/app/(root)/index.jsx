@@ -26,7 +26,7 @@ export default function Page() {
     loadProfileImage();
   }, [loadData]);
 
-  // Profil resmini AsyncStorage'dan yükle
+  
   const loadProfileImage = async () => {
     try {
       const savedImage = await AsyncStorage.getItem(`profileImage_${user.id}`);
@@ -38,7 +38,7 @@ export default function Page() {
     }
   };
 
-  // Profil resmini AsyncStorage'a kaydet
+  
   const saveProfileImage = async (imageUri) => {
     try {
       await AsyncStorage.setItem(`profileImage_${user.id}`, imageUri);
@@ -47,7 +47,7 @@ export default function Page() {
     }
   };
 
-  // Kamera ile fotoğraf çek
+  
   const takePhoto = async () => {
     const { status } = await ImagePicker.requestCameraPermissionsAsync();
     if (status !== 'granted') {
@@ -70,7 +70,7 @@ export default function Page() {
     }
   };
 
-  // Galeriden fotoğraf seç
+  
   const pickImage = async () => {
     const { status } = await ImagePicker.requestMediaLibraryPermissionsAsync();
     if (status !== 'granted') {
@@ -93,7 +93,7 @@ export default function Page() {
     }
   };
 
-  // Profil resmini kaldır
+  
   const removeProfileImage = async () => {
     try {
       await AsyncStorage.removeItem(`profileImage_${user.id}`);
@@ -104,7 +104,7 @@ export default function Page() {
     }
   };
 
-  // Profil resmi seçeneklerini göster
+  
   const showImageOptions = () => {
     setModalVisible(true);
   };
@@ -127,9 +127,9 @@ if(isLoading && !refreshing) return <PageLoader />
 return (
   <View style={styles.container}>
     <View style={styles.content}>
-      {/* HEADER */}
+      {}
       <View style={styles.header}>
-        {/* LEFT */}
+        {}
         <View style={styles.headerLeft}>
           <TouchableOpacity onPress={showImageOptions} style={styles.profileImageContainer}>
             <View style={[styles.avatarContainer, profileImage && styles.profileImage]}>
@@ -154,7 +154,7 @@ return (
             </Text>
           </View>
         </View>
-        {/* RIGHT */}
+        {}
         <View style={styles.headerRight}>
           <TouchableOpacity style={styles.addButton} onPress={() => router.push("/create")}>
             <Ionicons name="add" size={20} color="#FFF" />
@@ -181,7 +181,7 @@ return (
         refreshControl={<RefreshControl refreshing={refreshing} onRefresh={onRefresh} />}
       />
 
-      {/* Profil Resmi Seçenekleri Modal */}
+      {}
       <Modal
         animationType="slide"
         transparent={true}
@@ -198,7 +198,7 @@ return (
             activeOpacity={1}
             onPress={(e) => e.stopPropagation()}
           >
-            {/* Modal Handle */}
+            {}
             <View style={styles.modalHandle} />
             
             <Text style={styles.modalTitle}>Profile Picture</Text>

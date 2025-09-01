@@ -1,4 +1,4 @@
-// styles/home.styles.js
+
 import { StyleSheet } from "react-native";
 import { COLORS } from "../../constants/colors";
 
@@ -277,7 +277,7 @@ export const styles = StyleSheet.create({
   transactionsListContent: {
     paddingBottom: 20,
   },
-  // Profil resmi stilleri
+  
   profileImageContainer: {
     position: 'relative',
     marginRight: 12,
@@ -312,7 +312,7 @@ export const styles = StyleSheet.create({
     borderWidth: 2,
     borderColor: COLORS.card,
   },
-  // Modal stilleri
+  
   modalOverlay: {
     flex: 1,
     backgroundColor: 'rgba(0, 0, 0, 0.6)',

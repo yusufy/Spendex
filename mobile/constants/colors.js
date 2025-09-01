@@ -1,4 +1,4 @@
-// constants/colors.js
+
 const coffeeTheme = {
     primary: "#8B593E",
     background: "#FFF8F3",
@@ -13,19 +13,19 @@ const coffeeTheme = {
   };
   
 const forestTheme = {
-  primary: "#388E3C",      // Daha dengeli, canlı yeşil
-  background: "#F1F8F4",   // Daha soft pastel arka plan
-  text: "#2E4600",         // Koyu, doğal bir orman tonu
-  border: "#D0E8D0",       // Yumuşak yeşilimsi gri
+  primary: "#388E3C",      
+  background: "#F1F8F4",   
+  text: "#2E4600",         
+  border: "#D0E8D0",       
   white: "#FFFFFF",
-  textLight: "#81C784",    // Daha fresh yeşil tonu
-  expense: "#E53935",      // Daha parlak kırmızı (net kontrast için)
-  expenseLight: "#FFCDD2", // Light kırmızı (placeholder için)
-  income: "#43A047",       // Dengeli koyu yeşil
-  incomeLight: "#C8E6C9",  // Light yeşil (placeholder için)
+  textLight: "#81C784",    
+  expense: "#E53935",      
+  expenseLight: "#FFCDD2", 
+  income: "#43A047",       
+  incomeLight: "#C8E6C9",  
   card: "#FFFFFF",         
-  shadow: "rgba(0,0,0,0.15)", // Daha doğal ve modern gölge
-  accent: "#8D6E63",       // Toprak tonları (detaylarda kullanılabilir)
+  shadow: "rgba(0,0,0,0.15)", 
+  accent: "#8D6E63",       
 };
 
   
@@ -56,29 +56,29 @@ const forestTheme = {
   };
 
   const sunsetTheme = {
-    primary: "#FF7043",      // Turuncu-kırmızı (güneş tonu)
-    background: "#FFF3E0",   // Yumuşak açık turuncu
-    text: "#BF360C",         // Koyu kırmızımsı kahverengi
-    border: "#FFCCBC",       // Açık pastel turuncu
+    primary: "#FF7043",      
+    background: "#FFF3E0",   
+    text: "#BF360C",         
+    border: "#FFCCBC",       
     white: "#FFFFFF",        
-    textLight: "#FFAB91",    // Açık turuncu ton
-    expense: "#D32F2F",      // Harcama için kırmızı
-    income: "#388E3C",       // Gelir için yeşil
+    textLight: "#FFAB91",    
+    expense: "#D32F2F",      
+    income: "#388E3C",       
     card: "#FFFFFF",         
-    shadow: "#4E342E",       // Hafif kahverengimsi gölge
+    shadow: "#4E342E",       
   };
 
   const auroraTheme = {
-    primary: "#00C853",      // Canlı yeşil (aurora efekti)
-    background: "#0D1117",   // Koyu gece tonu
-    text: "#E0F7FA",         // Hafif mavi-beyaz
-    border: "#1E2A38",       // Koyu mavi-gri
+    primary: "#00C853",      
+    background: "#0D1117",   
+    text: "#E0F7FA",         
+    border: "#1E2A38",       
     white: "#FFFFFF",
-    textLight: "#64FFDA",    // Neon yeşil-mavi
-    expense: "#FF5252",      // Canlı kırmızı (harcama)
-    income: "#69F0AE",       // Neon yeşil (gelir)
-    card: "#161B22",         // Hafif koyu gri kartlar
-    shadow: "#000000",       // Derin gölge
+    textLight: "#64FFDA",    
+    expense: "#FF5252",      
+    income: "#69F0AE",       
+    card: "#161B22",         
+    shadow: "#000000",       
   };
   
   
@@ -92,5 +92,5 @@ const forestTheme = {
     aurora: auroraTheme,
   };
   
-  // 👇 change this to switch theme
+  
   export const COLORS = THEMES.forest;

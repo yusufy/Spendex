@@ -38,7 +38,7 @@ import { useSafeAreaInsets } from "react-native-safe-area-context";
     const [isLoading, setIsLoading] = useState(false);
   
     const handleCreate = async () => {
-      // validations
+      
       if (!title.trim()) return Alert.alert("Error", "Please enter a transaction title");
       if (!amount || isNaN(parseFloat(amount)) || parseFloat(amount) <= 0) {
         Alert.alert("Error", "Please enter a valid amount");
@@ -49,7 +49,7 @@ import { useSafeAreaInsets } from "react-native-safe-area-context";
   
       setIsLoading(true);
       try {
-        // Format the amount (negative for expenses, positive for income)
+        
         const formattedAmount = isExpense
           ? -Math.abs(parseFloat(amount))
           : Math.abs(parseFloat(amount));
@@ -94,7 +94,7 @@ import { useSafeAreaInsets } from "react-native-safe-area-context";
       showsVerticalScrollIndicator={false}
       >
       <View style={styles.container}>
-        {/* HEADER */}
+        {}
         <View style={styles.header}>
           <TouchableOpacity style={styles.backButton} onPress={() => router.back()}>
             <Ionicons name="arrow-back" size={24} color={COLORS.text} />
@@ -119,7 +119,7 @@ import { useSafeAreaInsets } from "react-native-safe-area-context";
   
         <View style={styles.card}>
           <View style={styles.typeSelector}>
-                        {/* EXPENSE SELECTOR */}
+                        {}
             <TouchableOpacity
               style={[styles.typeButton, isExpense && styles.typeButtonExpenseActive]}
               onPress={() => setIsExpense(true)}
@@ -135,7 +135,7 @@ import { useSafeAreaInsets } from "react-native-safe-area-context";
               </Text>
             </TouchableOpacity>
 
-            {/* INCOME SELECTOR */}
+            {}
             <TouchableOpacity
               style={[styles.typeButton, !isExpense && styles.typeButtonIncomeActive]}
               onPress={() => setIsExpense(false)}
@@ -152,7 +152,7 @@ import { useSafeAreaInsets } from "react-native-safe-area-context";
             </TouchableOpacity>
           </View>
   
-          {/* AMOUNT CONTAINER */}
+          {}
           <View style={[
             styles.amountContainer,
             isExpense ? styles.amountContainerExpense : styles.amountContainerIncome
@@ -174,7 +174,7 @@ import { useSafeAreaInsets } from "react-native-safe-area-context";
             />
           </View>
   
-          {/* INPUT CONTAINER */}
+          {}
           <View style={[
             styles.inputContainer,
             isExpense ? styles.inputContainerExpense : styles.inputContainerIncome
@@ -197,7 +197,7 @@ import { useSafeAreaInsets } from "react-native-safe-area-context";
             />
           </View>
   
-          {/* TITLE */}
+          {}
           <Text style={styles.sectionTitle}>
             <Ionicons name="pricetag-outline" size={16} color={COLORS.text} /> Category
           </Text>

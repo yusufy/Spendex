@@ -16,7 +16,7 @@ export async function getTransactionsByUserId(req, res) {
 }
 
 export async function createTransaction (req, res) {
-    //title, amount, category, user_id
+    
       try {
           const {title, amount, category, user_id} = req.body;
   

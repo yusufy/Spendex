@@ -1,4 +1,4 @@
-// styles/create.styles.js
+
 import { StyleSheet } from "react-native";
 import { COLORS } from "../../constants/colors";
 
@@ -177,7 +177,7 @@ export const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "center",
   },
-  // Dinamik renk stilleri
+  
   amountContainerExpense: {
     borderBottomColor: COLORS.expense,
   },

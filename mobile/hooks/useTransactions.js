@@ -1,4 +1,4 @@
-// react custom hook file
+
 
 import { useCallback, useState } from "react";
 import { Alert } from "react-native";
@@ -14,7 +14,7 @@ export const useTransactions = (user_id) => {
   });
   const [isLoading, setIsLoading] = useState(true);
 
-  // useCallback is used for performance reasons, it will memoize the function
+  
   const fetchTransactions = useCallback(async () => {
     try {
       const response = await fetch(`${API_URL}/transactions/${user_id}`);
@@ -48,7 +48,7 @@ export const useTransactions = (user_id) => {
 
     setIsLoading(true);
     try {
-      // can be run in parallel
+      
       await Promise.all([fetchTransactions(), fetchSummary()]);
     } catch (error) {
       console.error("Error loading data:", error);
@@ -65,7 +65,7 @@ export const useTransactions = (user_id) => {
         throw new Error(`Failed to delete transaction: ${response.status} ${errorText}`);
       }
 
-      // Refresh data after deletion
+      
       loadData();
       Alert.alert("Success", "Transaction deleted successfully");
     } catch (error) {

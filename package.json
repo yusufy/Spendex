@@ -1,0 +1,22 @@
+{
+  "name": "spendex",
+  "version": "1.0.0",
+  "description": "Spendex; React Native (Expo) ile geliştirilen mobil istemci ve Node.js (Express) tabanlı bir REST API’den oluşan tam kapsamlı bir kişisel finans takip uygulamasıdır.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "strip:comments": "node scripts/strip-comments.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yusufy/Spendex.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/yusufy/Spendex/issues"
+  },
+  "homepage": "https://github.com/yusufy/Spendex#readme"
+}

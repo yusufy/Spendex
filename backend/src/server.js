@@ -12,7 +12,7 @@ if (process.env.NODE_ENV === "production") job.start();
 
 const app = express();
 
-// Middleware
+
 app.use(rateLimiter);
 app.use(express.json());
 app.use(cors());

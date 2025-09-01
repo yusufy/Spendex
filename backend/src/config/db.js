@@ -2,7 +2,7 @@ import { neon } from "@neondatabase/serverless";
 
 import "dotenv/config";
 
-// Create a connection to the database
+
 export const sql = neon(process.env.DATABASE_URL);
 
 export async function initDB() {
@@ -20,6 +20,6 @@ export async function initDB() {
         console.log("Database initialized successfully");
     } catch (error) {
         console.error("Error initializing database:", error);
-        process.exit(1); // Exit the process with a failure code
+        process.exit(1); 
     }
 }
