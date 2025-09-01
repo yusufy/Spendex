@@ -19,12 +19,21 @@ export default function Page() {
   const router = useRouter();
   const { transactions, summary, isLoading, loadData, deleteTransaction} = useTransactions(user.id);
   const [refreshing, setRefreshing] = useState(false);
+  const [displayName, setDisplayName] = useState('');
   const [profileImage, setProfileImage] = useState(null);
   const [modalVisible, setModalVisible] = useState(false);
   useEffect(() => {
     loadData();
     loadProfileImage();
   }, [loadData]);
+
+
+  useEffect(() => {
+    if (user) {
+      const name = user?.unsafeMetadata?.displayName || user?.publicMetadata?.displayName || user?.fullName || user?.username || user?.emailAddresses[0]?.emailAddress.split("@")[0];
+      setDisplayName(name || '');
+    }
+  }, [user]);
 
   
   const loadProfileImage = async () => {
@@ -34,7 +43,7 @@ export default function Page() {
         setProfileImage(savedImage);
       }
     } catch (error) {
-      console.error('Profil resmi yüklenirken hata:', error);
+      console.error('Error loading profile image:', error);
     }
   };
 
@@ -43,7 +52,7 @@ export default function Page() {
     try {
       await AsyncStorage.setItem(`profileImage_${user.id}`, imageUri);
     } catch (error) {
-      console.error('Profil resmi kaydedilirken hata:', error);
+      console.error('Error saving profile image:', error);
     }
   };
 
@@ -100,7 +109,7 @@ export default function Page() {
       setProfileImage(null);
       setModalVisible(false);
     } catch (error) {
-      console.error('Profil resmi kaldırılırken hata:', error);
+      console.error('Error removing profile image:', error);
     }
   };
 
@@ -148,17 +157,16 @@ return (
             </View>
           </TouchableOpacity>
           <View style={styles.welcomeContainer}>
-            <Text style={styles.welcomeText}>Welcome,</Text>
-            <Text style={styles.usernameText}>
-              {user?.emailAddresses[0]?.emailAddress.split("@")[0]}
+            <Text style={styles.welcomeText} numberOfLines={1}>Welcome,</Text>
+            <Text style={styles.usernameText} numberOfLines={1}>
+              {displayName}
             </Text>
           </View>
         </View>
         {}
         <View style={styles.headerRight}>
-          <TouchableOpacity style={styles.addButton} onPress={() => router.push("/create")}>
-            <Ionicons name="add" size={20} color="#FFF" />
-            <Text style={styles.addButtonText}>Add</Text>
+          <TouchableOpacity style={styles.logoutButton} onPress={() => router.push('/profile')}>
+            <Ionicons name="settings-outline" size={20} color="#4A4A4A" />
           </TouchableOpacity>
           <SignOutButton />
         </View>
@@ -168,6 +176,10 @@ return (
 
       <View style={styles.transactionsHeaderContainer}>
         <Text style={styles.sectionTitle}>Recent Transactions</Text>
+        <TouchableOpacity style={styles.addButton} onPress={() => router.push('/create')}>
+          <Ionicons name="add" size={20} color="#FFF" />
+          <Text style={styles.addButtonText}>Add</Text>
+        </TouchableOpacity>
       </View>
     </View>
 
