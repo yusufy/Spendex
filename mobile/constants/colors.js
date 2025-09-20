@@ -93,4 +93,4 @@ const forestTheme = {
   };
   
   
-  export const COLORS = THEMES.forest;
+  export const COLORS = THEMES.coffee;
