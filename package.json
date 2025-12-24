@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "strip:comments": "node scripts/strip-comments.js"
+    "strip:comments": "node scripts/strip-comments.js",
+    "start": "cd backend && npm install && node src/server.js"
   },
   "repository": {
     "type": "git",
