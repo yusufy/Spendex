@@ -1,1 +1,1 @@
-export const API_URL = "https://spendex.onrender.com/api/health";
+export const API_URL = "https://spendex.onrender.com/api";
